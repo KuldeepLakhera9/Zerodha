@@ -1,16 +1,15 @@
 import React from "react";
 import NavBar from "../NavBar";
 import Footer from "../Footer";
-import Team from "./Team";
 
-function AboutPage() {
+function ProductPage() {
   return (
     <>
       <NavBar />
-      <Team />
+
       <Footer />
     </>
   );
 }
 
-export default AboutPage;
+export default ProductPage;
