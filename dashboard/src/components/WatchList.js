@@ -1,5 +1,14 @@
 import React from "react";
 
+// import GeneralContext from "./GeneralContext";
+import { Tooltip, Grow } from "@mui/material";
+
+import { watchlist } from "../data/data";
+
+const WatchListItem = ({ stock }) => {
+  return <li>{stock.name}</li>;
+};
+
 const WatchList = () => {
   return (
     <div className="watchlist-container">
@@ -11,10 +20,14 @@ const WatchList = () => {
           placeholder="Search eg:infy, bse, nifty fut weekly, gold mcx"
           className="search"
         />
-        <span className="counts"> 9 / 50</span>
+        <span className="counts"> {watchlist.length} / 50</span>
       </div>
 
-      <ul className="list"></ul>
+      <ul className="list">
+        {watchlist.map((stock, index) => {
+          return <WatchListItem stock={stock} key={index} />;
+        })}
+      </ul>
     </div>
   );
 };
